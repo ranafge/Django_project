@@ -1,0 +1,7 @@
+{% with request.resolver_match.url_name as url_name %}
+<ul id="menu">
+<li class="{% if url_name == 'home' %}active{% endif %}">Home</li>
+<li class="{% if url_name == 'about' %}active{% endif %}">About</li>
+<li class="{% if url_name == 'employer' %}active{% endif %}">Employer</li>
+</ul>
+{% endwith %}
