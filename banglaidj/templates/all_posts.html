@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html'%}
 
-</body>
-</html>
+{% block content %}
+
+
+<div class="w3-container">
+    {% for post in posts %}
+    <ul>
+    <li><h1><a href="{% url 'single_post' post.id %}"> {{ post.title | title}} </a></h1></li>
+        <p><li>{{post.description | title}}</li></p>
+  <hr>
+    </ul>
+{%endfor%}
+</div>
+
+{% endblock %}
