@@ -6,14 +6,23 @@
       <link rel="stylesheet" href="{% static 'style.css' %}">
    </head>
    <body>
-      <div class="container">
-         <div class="page-header page-header-custom">
-            <h1 class="text-center">Django</h1><br>
-         </div>
+<div class="page-header page-header-custom">
+   <h1 class="text-center">Django  স্বাগতম বাংলায় জ্যাঙ্গো টিউটোরিয়াল এর প্রথম টেমপ্লেট এ </h1><br>
+</div>
+<div class="w3-container">
+    {% for post in posts %}
+    <ul>
+     <li><h3><a href="{% url 'single_post' post.pk%}">{{post.title}}</a> </h3></li>
+       <li>{{post.description | title}}</li>
+
+    </ul>
+
+</div>
+{% endfor%}
+<div class="w3-containder">
 
          {% block content %}
          {% endblock %}
-      </div>
-      </div>
+</div>
     </body>
 </html>
